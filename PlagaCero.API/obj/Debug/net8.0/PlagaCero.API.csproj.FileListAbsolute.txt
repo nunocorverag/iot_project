@@ -142,3 +142,8 @@
 /Users/gnunoc/Documents/Projects/TEC/iot_project/PlagaCero.API/obj/Debug/net8.0/PlagaCero.API.pdb
 /Users/gnunoc/Documents/Projects/TEC/iot_project/PlagaCero.API/obj/Debug/net8.0/PlagaCero.API.genruntimeconfig.cache
 /Users/gnunoc/Documents/Projects/TEC/iot_project/PlagaCero.API/obj/Debug/net8.0/ref/PlagaCero.API.dll
+/Users/gnunoc/Documents/Projects/TEC/iot_project/PlagaCero.API/bin/Debug/net8.0/MySqlConnector.dll
+/Users/gnunoc/Documents/Projects/TEC/iot_project/PlagaCero.API/bin/Debug/net8.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/gnunoc/Documents/Projects/TEC/iot_project/PlagaCero.API/bin/Debug/net8.0/Scrutor.dll
+/Users/gnunoc/Documents/Projects/TEC/iot_project/PlagaCero.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Filters.dll
+/Users/gnunoc/Documents/Projects/TEC/iot_project/PlagaCero.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll

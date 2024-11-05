@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlagaCero.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+758158bb3bcb41acb5be8c2f4f5b1ecf4632fbae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d535e458071f104c473742ba6c5a41e7481c5484")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlagaCero.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlagaCero.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
