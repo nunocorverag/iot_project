@@ -1,0 +1,23 @@
+<header class="site_header">
+    <div style="width: 160px;">
+        <img style="width: 100%;" src="Plaga 0 (1).png" alt="">
+    </div>
+    <nav>
+        <a class="nav_a" href="">Inicio</a>
+        <a class="nav_a" href="">Salud de mis plantíos</a>
+        <a class="nav_a" href="">Sobre Nosotros</a>
+        <a class="nav_a" href="">Contacto</a>
+    </nav>
+
+    <button (click)="display_menu()" class="menu_button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="35" height="35" stroke-width="2"> <path d="M4 6l16 0"></path> <path d="M4 12l16 0"></path> <path d="M4 18l16 0"></path> </svg> </button>
+</header>
+
+<div class="mobile_menu">
+    <nav>
+        <button  class="close_button" (click)="display_menu()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="35" height="35" stroke-width="2"> <path d="M18 6l-12 12"></path> <path d="M6 6l12 12"></path> </svg> </button>
+        <a class="nav_a" href="">Inicio</a>
+        <a class="nav_a" href="">Salud de mis plantíos</a>
+        <a class="nav_a" href="">Sobre Nosotros</a>
+        <a class="nav_a" href="">Contacto</a>
+    </nav>
+</div>
