@@ -1,1 +1,49 @@
 <app-header></app-header>
+
+<div class="grid_general">
+
+@for (planta of plantas; track $index) { 
+
+<div class="grid_content" >
+
+
+    <div class="grid_content_div">
+        <h2 align="center">Estado de la planta: {{$index + 1}} </h2>
+        <p style="margin-top: 10px;" align="center">Color: {{planta.color}}</p>
+
+        @if (planta.estado =="sano") {
+            <div class="verde">
+                <p align="center">Estado: {{planta.estado}}</p>
+            </div>
+
+            <p></p>
+        }
+
+        @else if (planta.estado =="riesgo") {
+            <div class="amarillo">
+                <p align="center">Estado: {{planta.estado}}</p>
+            </div>
+        }
+
+        @else {
+            <div class="rojo">
+                <p align="center">Estado: {{planta.estado}}</p>
+            </div>
+        }
+
+    </div>
+
+    <div class="grid_content_div2">
+        <p align="center">Temperatura: {{planta.temperatura}} C°</p>
+    </div>
+
+    <div class="grid_content_div3">
+        <p align="center">Humedad:{{planta.humedad}}</p>
+    </div>
+
+
+</div>
+
+}
+
+</div>
