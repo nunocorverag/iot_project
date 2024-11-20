@@ -20,6 +20,7 @@ export class AppComponent {
       temperatura: 32,
       humedad: 20,
       estado: "sano",
+      link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvNUBH_oPcYGA7OBcm9tfVG8hcWbjTa6OrEg&s"
     },
 
 
@@ -28,6 +29,7 @@ export class AppComponent {
       temperatura: 40,
       humedad: 10,
       estado: "infectado",
+      link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvNUBH_oPcYGA7OBcm9tfVG8hcWbjTa6OrEg&s"
     },
 
 
@@ -36,8 +38,21 @@ export class AppComponent {
       temperatura: 35,
       humedad: 18,
       estado: "riesgo",
+      link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvNUBH_oPcYGA7OBcm9tfVG8hcWbjTa6OrEg&s"
     },
   ]
+
+  nuevaPlanta(){
+    this.plantas.push(
+      {
+        color: "amarillo",
+      temperatura: 35,
+      humedad: 18,
+      estado: "sano",
+      link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvNUBH_oPcYGA7OBcm9tfVG8hcWbjTa6OrEg&s"
+      }
+    );
+  }
 
   
 

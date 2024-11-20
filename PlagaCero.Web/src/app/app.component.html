@@ -8,37 +8,48 @@
 
 
     <div class="grid_content_div">
-        <h2 align="center">Estado de la planta: {{$index + 1}} </h2>
-        <p style="margin-top: 10px;" align="center">Color: {{planta.color}}</p>
+        <h2 align="center" style="margin-bottom: 15px;">Estado de la planta: {{$index + 1}} </h2>
 
-        @if (planta.estado =="sano") {
-            <div class="verde">
-                <p align="center">Estado: {{planta.estado}}</p>
+        <div class="grid_content_grid">
+
+            <div class="div_imagen">
+
+                <img [src]="planta.link" alt="">
+
             </div>
 
-            <p></p>
-        }
+            <div class="grid_content_grid2">
+                <p style="margin-top: 10px;" align="center">Color: {{planta.color}}</p>
 
-        @else if (planta.estado =="riesgo") {
-            <div class="amarillo">
-                <p align="center">Estado: {{planta.estado}}</p>
+                @if (planta.estado =="sano") {
+                    <div class="verde">
+                        <p align="center">Estado: {{planta.estado}}</p>
+                    </div>
+
+                    <p></p>
+                }
+
+                @else if (planta.estado =="riesgo") {
+                    <div class="amarillo">
+                        <p align="center">Estado: {{planta.estado}}</p>
+                    </div>
+                }
+
+                @else {
+                    <div class="rojo">
+                        <p align="center">Estado: {{planta.estado}}</p>
+                    </div>
+                }
             </div>
-        }
-
-        @else {
-            <div class="rojo">
-                <p align="center">Estado: {{planta.estado}}</p>
             </div>
-        }
+        </div>
 
-    </div>
+        <div class="grid_content_div2" >
+            <p align="center" >Temperatura: {{planta.temperatura}} C°</p>
+        </div>
 
-    <div class="grid_content_div2">
-        <p align="center">Temperatura: {{planta.temperatura}} C°</p>
-    </div>
-
-    <div class="grid_content_div3">
-        <p align="center">Humedad:{{planta.humedad}}</p>
+        <div class="grid_content_div3">
+            <p align="center" >Humedad:{{planta.humedad}}%</p>
     </div>
 
 
@@ -47,3 +58,5 @@
 }
 
 </div>
+
+<button (click)="nuevaPlanta()" class="boton_agregar">+ Agregar Planta</button>

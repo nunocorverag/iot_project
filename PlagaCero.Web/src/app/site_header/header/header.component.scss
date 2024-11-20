@@ -1,5 +1,5 @@
 @mixin mobile{
-    @media screen and (max-width: 540px) {
+    @media screen and (max-width: 650px) {
       @content
     }
 }
@@ -8,6 +8,8 @@
 
 
 .site_header{
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
