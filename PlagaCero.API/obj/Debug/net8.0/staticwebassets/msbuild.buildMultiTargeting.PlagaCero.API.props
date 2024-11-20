@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PlagaCero.API.props" />
+</Project>
