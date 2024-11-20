@@ -17,13 +17,19 @@ namespace PlagaCero.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AuthorDto>>> GetAuthors()
+        public async Task<ActionResult<IEnumerable<AuthorWithBooksDto>>> GetAuthors()
         {
             var authors = await _context.Authors.Include(a => a.Books)
-                                                 .Select(a => new AuthorDto 
+                                                 .Select(a => new AuthorWithBooksDto 
                                                  { 
                                                      AuthorId = a.AuthorId, 
-                                                     Name = a.Name 
+                                                     Name = a.Name,
+                                                    Books = a.Books.Select(b => new BookDto 
+                                                    { 
+                                                        BookId = b.BookId, 
+                                                        Title = b.Title,
+                                                        AuthorId = b.AuthorId
+                                                    }).ToList() 
                                                  })
                                                  .ToListAsync();
             return authors;
@@ -40,7 +46,8 @@ namespace PlagaCero.API.Controllers
                                                     Books = a.Books.Select(b => new BookDto 
                                                     { 
                                                         BookId = b.BookId, 
-                                                        Title = b.Title 
+                                                        Title = b.Title,
+                                                        AuthorId = b.AuthorId
                                                     }).ToList() 
                                                 })
                                                 .FirstOrDefaultAsync(a => a.AuthorId == id);
