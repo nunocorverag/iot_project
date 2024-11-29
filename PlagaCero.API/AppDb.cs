@@ -15,17 +15,15 @@ public class AppDb : DbContext
     public DbSet<Student> Students { get; set; }
     public DbSet<Course> Courses { get; set; }
 
+    public DbSet<Plant> Plants { get; set; }
+    public DbSet<PlantTemperature> PlantTemperatures { get; set; }
+    public DbSet<PlantState> PlantStates { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
 
-        var DbUser = Environment.GetEnvironmentVariable(AppConfig.DbUserKey)
-            ?? throw new Exception($"environment variable '{AppConfig.DbUserKey}' is not set");
-
-        var DbPassword = Environment.GetEnvironmentVariable(AppConfig.DbPasswordKey)
-            ?? throw new Exception($"environment variable '{AppConfig.DbPasswordKey}' is not set");
-
-        var connectionString = $"server=localhost;port=8889;user={DbUser};password={DbPassword};database={AppConfig.DatabaseName}";
+        var connectionString = $"server=localhost;user={"erick"};password={"12917erick"};database={AppConfig.DatabaseName}";
 
         optionsBuilder.UseMySql(connectionString, AppConfig.MySqlServerVersion);
 
@@ -47,7 +45,21 @@ public class AppDb : DbContext
             .HasMany(s => s.Courses)
             .WithMany(c => c.Students)
             .UsingEntity(j => j.ToTable("StudentCourses"));
-        
+
+        // Relación de uno a muchos entre Plant y PlantTemperature
+        modelBuilder.Entity<Plant>()
+            .HasMany(p => p.PlantTemperatures)
+            .WithOne(pt => pt.Plant)
+            .HasForeignKey(pt => pt.PlantId)
+            .OnDelete(DeleteBehavior.Cascade);  // Si una planta se elimina, se eliminan sus temperaturas
+
+        // Relación de uno a muchos entre Plant y PlantState
+        modelBuilder.Entity<Plant>()
+            .HasMany(p => p.PlantStates)
+            .WithOne(ps => ps.Plant)
+            .HasForeignKey(ps => ps.PlantId)
+            .OnDelete(DeleteBehavior.Cascade);  // Si una planta se elimina, se eliminan sus estados
+
         // Configuración personalizada para Test
         modelBuilder.Entity<Test>(e =>
         {

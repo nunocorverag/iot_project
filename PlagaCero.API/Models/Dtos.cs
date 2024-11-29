@@ -92,3 +92,30 @@ public class StudentWithCoursesDto
     public required string Name { get; set; }
     public required List<CourseDto> Courses { get; set; }
 }
+
+//Plants
+public class PlantDto
+{
+    public int? PlantId { get; set; }
+    public DateTime? FechaRegistro { get; set; }
+
+    // Nullable lists for related entities
+    public List<PlantTemperatureDto>? PlantTemperatures { get; set; }
+    public List<PlantStateDto>? PlantStates { get; set; }
+}
+
+public class PlantStateDto
+{
+    public int? PlantStateId { get; set; }
+    public DateTime? Fecha { get; set; }
+    public string? State { get; set; }
+    public int? PlantId { get; set; }
+}
+
+public class PlantTemperatureDto
+{
+    public int? PlantTemperatureId { get; set; }
+    public DateTime? Fecha { get; set; }
+    public float? Temperatura { get; set; }
+    public int? PlantId { get; set; }
+}
