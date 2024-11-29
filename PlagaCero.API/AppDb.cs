@@ -19,13 +19,7 @@ public class AppDb : DbContext
     {
         base.OnConfiguring(optionsBuilder);
 
-        var DbUser = Environment.GetEnvironmentVariable(AppConfig.DbUserKey)
-            ?? throw new Exception($"environment variable '{AppConfig.DbUserKey}' is not set");
-
-        var DbPassword = Environment.GetEnvironmentVariable(AppConfig.DbPasswordKey)
-            ?? throw new Exception($"environment variable '{AppConfig.DbPasswordKey}' is not set");
-
-        var connectionString = $"server=localhost;port=8889;user={DbUser};password={DbPassword};database={AppConfig.DatabaseName}";
+        var connectionString = $"server=localhost;user={"erick"};password={"12917erick"};database={AppConfig.DatabaseName}";
 
         optionsBuilder.UseMySql(connectionString, AppConfig.MySqlServerVersion);
 
